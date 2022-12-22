@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar :- left side</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .menu-box {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .menu {
+      height: 3px;
+      width: 20px;
+      background-color: white;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px 10px 20px;
+      background-color: cadetblue;
+    }
+
+    .logo {
+      font-size: 2rem;
+      color: white;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
+    .link {
+      list-style-type: none;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .side1 {
+      height: 100vh;
+      width: 15rem;
+      background-color: cadetblue;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all linear 0.5s;
+      animation: Hk alternate-reverse 0.5s linear;
+    }
+
+    @keyframes Hk {
+      0% {
+        transform: translate(0px);
+      }
+
+      100% {
+        transform: translate(-20rem);
+      }
+    }
+
+    .side {
+      transition: all linear 0.5s;
+      display: none;
+      animation: Hk alternate-reverse 0.5s linear;
+    }
+    @keyframes Hk1 {
+      0% {
+        transform: translate(-20rem);
+      }
+
+      100% {
+        transform: translate(-20rem);
+      }
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: inherit;
+      height: inherit;
+      transition: all linear 0.5s;
+    }
+
+    .link-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .social-media {
+      display: flex;
+    }
+  </style>
+
+  <body>
+    <nav >
+      <div class="nav">
+        <div class="logo">Hksuthar</div>
+        <div class="menu-box">
+          <div class="menu"></div>
+          <div class="menu"></div>
+          <div class="menu"></div>
+        </div>
+      </div>
+
+      <div class="side" id="hi">
+        <div class="box">
+          <div class="logo">Hitesuthar</div>
+          <div class="link-box">
+            <li class="link">Home</li>
+            <li class="link">Home</li>
+            <li class="link">Home</li>
+            <li class="link">Home</li>
+          </div>
+          <div class="social-media">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <script>
+      let menu = document.querySelector(".menu-box");
+      menu.addEventListener("click", function () {
+        let side = document.querySelector("#hi");
+
+        side.classList.toggle("side1")
+          ? side.classList.remove("side")
+          : side.classList.add("side");
+      });
+    </script>
+  </body>
+</html>
